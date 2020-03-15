@@ -1,19 +1,39 @@
+
 #include<iostream>
+#include<vector>
+#include<algorithm>
+#include<cstring>
 using namespace std;
 
-int gcd(int a, int b)
+void sieve(int n)
 {
-    if(b==0)
-        return a;
-    // cout<<b<<" "<<a%b<<"\n";    
-    return gcd(b, a%b);    
+    bool prime[n+1];
+    memset(prime, true, sizeof(prime));
+
+    for(int i=2;i*i<=n;i++)
+    {
+        if(prime)
+        {
+            for(int j=i*i;j<=n;j+=i)
+            {
+                prime[j]=false;
+            }
+        }
+    }
+    for(int i=1;i<=n;i++)
+    {
+        if(prime[i])
+        {
+            cout<<i<<" ";
+        }
+    }
 }
 
 int main()
-{   
-    int a,b;
-    cin>>a>>b;
-    cout<<"gcd of "<<a<<" & "<<b<<" = "<<gcd(a,b);
+{
+    int n;
+    cin>>n;
+    sieve(n);
     system("pause");
     return 0;
 }
