@@ -33,9 +33,7 @@ void center()
             {
                 degree[neighbour[j]] = degree[neighbour[j]] - 1;
                 if (degree[neighbour[j]] == 1)
-                {
                     new_leaf.push_back(neighbour[j]);
-                }
             }
             degree[i] = 0;
         }
