@@ -113,3 +113,21 @@ int main()
     system("pause");
     return 0;
 }
+
+// TO CALCULATE THE LONGEST PATH FROM A SINGLE SOURCE, JUST NEGATE ALL THE WEIGHTS AND FIND THE SHORTEST     PATH, AND FINALLY MULTIPLY THE FINAL ANSWER WITH "-1"
+
+// 13
+// 1 2 3
+// 1 3 6
+// 2 4 4
+// 2 3 4
+// 2 5 11
+// 3 4 8
+// 3 7 11
+// 4 5 -4
+// 4 6 5
+// 4 7 2
+// 5 8 9
+// 6 8 1
+// 7 8 2
+// 1
