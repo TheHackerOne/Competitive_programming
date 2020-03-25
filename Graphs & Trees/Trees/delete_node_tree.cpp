@@ -1,14 +1,14 @@
 /* Deleting a node from Binary search tree */
 #include <iostream>
 using namespace std;
-struct Node
+struct bstNode
 {
     int data;
-    struct Node *left;
-    struct Node *right;
+    bstNode *left;
+    bstNode *right;
 };
 //Function to find minimum in a tree.
-Node *FindMin(Node *root)
+bstNode *FindMin(bstNode *root)
 {
     while (root->left != NULL)
         root = root->left;
@@ -16,7 +16,7 @@ Node *FindMin(Node *root)
 }
 
 // Function to search a delete a value from tree.
-struct Node *Delete(struct Node *root, int data)
+bstNode *Delete(bstNode *root, int data)
 {
     if (root == NULL)
         return root;
@@ -36,20 +36,20 @@ struct Node *Delete(struct Node *root, int data)
         //Case 2: One child
         else if (root->left == NULL)
         {
-            struct Node *temp = root;
+            bstNode *temp = root;
             root = root->right;
             delete temp;
         }
         else if (root->right == NULL)
         {
-            struct Node *temp = root;
+            bstNode *temp = root;
             root = root->left;
             delete temp;
         }
         // case 3: 2 children
         else
         {
-            struct Node *temp = FindMin(root->right);
+            bstNode *temp = FindMin(root->right);
             root->data = temp->data;
             root->right = Delete(root->right, temp->data);
         }
@@ -58,7 +58,7 @@ struct Node *Delete(struct Node *root, int data)
 }
 
 //Function to visit nodes in Inorder
-void Inorder(Node *root)
+void Inorder(bstNode *root)
 {
     if (root == NULL)
         return;
@@ -69,11 +69,11 @@ void Inorder(Node *root)
 }
 
 // Function to Insert Node in a Binary Search Tree
-Node *Insert(Node *root, char data)
+bstNode *Insert(bstNode *root, char data)
 {
     if (root == NULL)
     {
-        root = new Node();
+        root = new bstNode();
         root->data = data;
         root->left = root->right = NULL;
     }
@@ -94,7 +94,7 @@ int main()
 			 / \   \
 			1   4   11
     */
-    Node *root = NULL;
+    bstNode *root = NULL;
     root = Insert(root, 5);
     root = Insert(root, 10);
     root = Insert(root, 3);
