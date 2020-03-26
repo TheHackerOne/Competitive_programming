@@ -42,6 +42,6 @@ int main()
             ans *= abs(parent[i]);
     }
     cout << ans << "\n";
-
+    system("pause");
     return 0;
 }
