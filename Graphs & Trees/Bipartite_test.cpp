@@ -1,5 +1,4 @@
-#include <iostream>
-#include <vector>
+#include "stdc++.h"
 using namespace std;
 
 vector<int> adj[10];
