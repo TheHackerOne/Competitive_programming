@@ -64,6 +64,7 @@
 
 #if __cplusplus >= 201103L
 #include <array>
+#define what_is(x) cerr << #x << " is " << x << endl;
 #include <atomic>
 #include <chrono>
 #include <condition_variable>
